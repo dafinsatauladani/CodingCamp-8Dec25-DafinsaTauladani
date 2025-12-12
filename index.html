@@ -1,22 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List - Dafinsa Tauladani</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App - RevoU Project</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-    <!-- Header Content -->
-    <header></header>
 
-    <!-- Main Content -->
-    <main></main>
+<body class="bg-[#0d0f14] text-gray-200 min-h-screen flex flex-col">
 
-    <!-- Footer Contect -->
-    <footer></footer>
+    <!-- HEADER -->
+    <header class="py-8 text-center">
+        <h1 class="text-3xl font-semibold tracking-wide glow-text">
+            Todo List App
+        </h1>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-1 container mx-auto px-4 max-w-3xl">
+
+        <!-- Form -->
+        <section class="card mb-8">
+            <h2 class="text-xl font-semibold mb-4">Create New Todo</h2>
+
+            <form id="todoForm" class="space-y-5">
+                
+                <!-- Title -->
+                <div>
+                    <label class="block mb-1">Title *</label>
+                    <input id="titleInput" type="text" required
+                        class="input-field" />
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="block mb-1">Description</label>
+                    <textarea id="descInput" class="input-field"></textarea>
+                </div>
+
+                <!-- Date -->
+                <div>
+                    <label class="block mb-1">Due Date *</label>
+                    <input id="dateInput" type="date" required
+                        class="input-field" />
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Task
+                </button>
+            </form>
+        </section>
+
+        <!-- Filter -->
+        <section class="mb-6">
+            <label class="block mb-2 font-medium">Filter Todo</label>
+            <select id="filterSelect" class="input-field">
+                <option value="all">All</option>
+                <option value="today">Today</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="expired">Expired</option>
+                <option value="completed">Completed</option>
+            </select>
+        </section>
+
+        <!-- Todo List -->
+        <section id="todoList" class="space-y-4"></section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-6 text-center text-sm text-gray-500 border-t border-gray-700 mt-10">
+        © 2025 RevoU Project — Minimalist Todo App
+    </footer>
 
     <!-- JS -->
     <script src="js/script.js"></script>
